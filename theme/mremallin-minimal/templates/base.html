@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="{% block html_lang %}{{ DEFAULT_LANG }}{% endblock %}">
+    <head>
+        <title>{% block title %}{{ SITENAME }}{% endblock %}</title>
+        <link rel="stylesheet" href="{{ SITEURL }}/theme/css/mremallin.css" type="text/css">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        {% block meta %}
+        {% endblock %}
+    </head>
+    <body>
+        <div class="navbar" role="navigation">
+            <ul class="navbar">
+            <li><a href="{{ SITEURL }}">{{ SITENAME }}</a></li>
+                {% for title, link in MENUITEMS %}
+                    <li><a href="{{ link }}">{{ title }}</a></li>
+                {% endfor %}
+                {% for cat, null in categories %}
+                    <li {% if cat == category %}class="active"{% endif %}>
+                        <a href="{{ SITEURL }}/{{ cat.url }}">{{ cat | capitalize }}</a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% block content %}
+        {% endblock %}
+    </body>
+</html>

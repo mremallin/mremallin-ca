@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+    {% if articles %}
+    <div class="article_list">
+        {% for article in (articles_page.object_list if articles_page else articles) %}
+        <div class="article_list_entry">
+            {% if not article.logo %}
+            <div class="article-list-spacer">
+                <p></p>
+            </div>
+            {% else %}
+            <div class="article_list_logo">
+                <a class="image-box" href="{{ article.logo }}">
+                    <img alt="{{ article.title }}" src="{{ article.logo | thumbnail("_x100") }}"/>
+                </a>
+            </div>
+            {% endif %}
+            <div>
+                <h1><a href="{{ article.url }}">{{ article.title }}</a></h1>
+                <div><p>{{ article.date | strftime('%d %B, %Y') | striptags | escape }} - {{ article.summary | striptags | escape }}</p></div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+    {% include 'pagination.html' %}
+{% endblock content %}

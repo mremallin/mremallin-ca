@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+<!--Borrowed from github.com/AlexJF/alexjf.net-->
+{% block title %}{{ article.title|striptags }} - {{ SITENAME }}{% endblock %}
+{% block html_lang %}{{ article.lang }}{% endblock %}
+{% block meta %}
+    {% if article.author %}
+        <meta name="author" content="{{ article.author }}" />
+    {% else %}
+        <meta name="author" content="{{ AUTHOR }}" />
+    {% endif %}
+    {% if article.tags %}
+        <meta name="keywords" content="{{ article.tags|join(',')|striptags }}" />
+    {% endif %}
+    {% if article.summary %}
+        <meta name="description" content="{{ article.summary|striptags|escape }}" />
+    {% endif %}
+{% endblock %}
+
+{% block content %}
+    <div class="article_info">
+    <ul class="article_info">
+        <li><h1><a href="{{ SITEURL }}/{{ article.url }}"
+                   rel="bookmark"
+                   title="Permalink to {{ article.title|striptags }}">
+            {{ article.title }}
+        </a></h1></li>
+        <li><h3>Date: {{ article.date|strftime('%d %B, %Y') }}</h3></li>
+        <li><h3>Author: {{ article.author }}</h3></li>
+        <li><h3>Category: {{ article.category }}</h3></li>
+        <li><h3>Tags: {% for tag in article.tags %}{{tag}} {% endfor %}</h3></li>
+    </ul>
+    </div>
+    <div class="entry-content">
+        {% if article.logo %}
+        <p><img alt="Header" class="content-header" src="{{ article.logo | thumbnail('_x400') }}"/></p>
+        {% endif %}
+        {{ article.content }}
+        {% if article.gallery %}
+        <div class="gallery">
+            <ul>
+            {% for picture in article.gallery %}
+            <a class="image-box" href="{{ picture.url }}" rel="None" title="{{ picture.description }}"><img src="{{ picture.url | thumbnail('_x100') }}" title="{{ picture.description }}"></a>
+            {% endfor %}
+            </ul>
+        </div>
+        {% endif %}
+    </div>
+{% endblock %}
