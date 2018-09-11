@@ -16,7 +16,7 @@
             </div>
             {% endif %}
             <div>
-                <h1><a href="{{ article.url }}">{{ article.title }}</a></h1>
+                <h1><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></h1>
                 <div><p>{{ article.date | strftime('%d %B, %Y') | striptags | escape }} - {{ article.summary | striptags | escape }}</p></div>
             </div>
         </div>
