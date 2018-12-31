@@ -10,7 +10,6 @@ pelican-advthumbnailer==0.7.0
 pelican-autostatic==0.2.2
 pelican-metadataparsing==0.1.0
 Pillow==5.2.0
-pkg-resources==0.0.0
 Pygments==2.2.0
 python-dateutil==2.7.3
 pytz==2018.5
