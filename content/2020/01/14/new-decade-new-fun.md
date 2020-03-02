@@ -5,6 +5,7 @@ Slug: new-decade-new-fun
 Authors: Mike Mallin
 Summary: 2020 is just another fun year ahead
 Date: 2020-01-14
+Logo: {static|images/ChristmasTree.png}
 
 Happy New Years all! What a way to wrap up the past decade. It's certainly been an exciting one full of many unplanned twists and turns. Thanks to all my friends for being awesome! I'm very priviledged to have all of these memories with you. Here's hoping the coming year brings many more fond ones.
 
