@@ -22,7 +22,7 @@ TIMEZONE = 'America/Toronto'
 
 DEFAULT_LANG = u'en'
 
-THEME = os.getcwd() + '/theme/mremallin-minimal'
+THEME = os.getcwd() + '/theme/pelican-blueidea'
 
 # Feed generation is usually not desired when developing
 FEED_ALL_ATOM = None

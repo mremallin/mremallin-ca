@@ -15,7 +15,7 @@ FTP_TARGET_DIR=/
 SSH_HOST=mremallin.ca
 SSH_PORT=22
 SSH_USER=mmallin
-SSH_TARGET_DIR=/var/www/mremallin.ca
+SSH_TARGET_DIR=/var/www/html
 
 S3_BUCKET=my_s3_bucket
 
