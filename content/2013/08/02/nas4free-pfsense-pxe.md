@@ -22,7 +22,7 @@ Figure 1 - Setting a static IP
 
 Next, you need a tftp share to hold the required files. Under Services -> TFTP, check the enable box, then choose a folder to share.
 
-![Figure2]({static|images/figure2.jpg"){: .align-center}
+![Figure2]({static|images/figure2.jpg){: .align-center}
 Figure 2 - Enabling TFTP
 
 Configuring pfSense
