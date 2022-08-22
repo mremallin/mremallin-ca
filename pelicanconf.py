@@ -1,9 +1,6 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*- #
-from __future__ import unicode_literals
+#!/usr/bin/env python3
 import os
 import collections
-import six
 
 AUTHOR = u'Mike Mallin'
 SITENAME = u"Mike Mallin's Homepage"
@@ -40,31 +37,27 @@ DEFAULT_PAGINATION = 10
 
 # Borrowed from github.com/AlexJF/alexjf.net
 GalleryItem = collections.namedtuple("GalleryItem", ["url", "description"])
-def parse_gallery(string):
-    if string is None or not isinstance(string, collections.Iterable):
-        return None
-
-    if not isinstance(string, six.string_types):
-        string = '\n'.join(string)
-
+def parse_gallery(gallery_items):
     items = []
-    
-    for line in string.split('\n'):
-        if not line:
+
+    for item in gallery_items:
+        if item == '':
             continue
-        parts = line.split("||")
+        parts = item.split("||")
         url = parts[0].strip()
         if len(parts) == 1:
             description = None
         else:
             description = parts[1].strip()
         items.append(GalleryItem(url, description))
+
     return items
 
 def parse_description(string):
+    print('Description:' + str(string))
     if string is None or isinstance(string, six.string_types):
         return string
-    if isinstance(string, collections.Iterable):
+    if isinstance(string, collections.abc.Iterable):
         string = " ".join(string)
     return string
 
