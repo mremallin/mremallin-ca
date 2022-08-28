@@ -20,7 +20,7 @@ As you can see, even a 10 year old computer is still 10x faster than x86 emulati
 You may be thinking, "what about running a native OS and only emulating Vivado?" That's a very good point! There are two options for this that I know of:
 
 1. Run Windows 11 ARM - Dev Branch Insider Edition in the hypervisor and rely on windows to translate the x86_64 binary
-2. Wait for MacOS 13 and the exposure of Rosetta 2 to hypervisor guests
+2. Wait for MacOS 13 and the exposure of Rosetta 2 to hypervisor guests. See [UTM #4100](https://github.com/utmapp/UTM/issues/4100) for details.
 
 I attempted 1. after the excruciating wait for Debian to finish building. This time things were much faster and almost approaching the level of performance as the old MacBook Air. Project generation was within spitting distance at 42s. Unfortunately that's where all the good luck ran out. I ran into crash every time I tried to launch the Vivado GUI. I used TCL mode from the command promt to generate the project but when starting the build one of the subprocesses would always hang during out-of-module synthesis of the IP. I tried deleting and rebuilding the project many times but was unable to get past this step.
 
