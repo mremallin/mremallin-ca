@@ -23,6 +23,8 @@ THEME = os.getcwd() + '/theme/pelican-blueidea'
 
 # Feed generation is usually not desired when developing
 FEED_ALL_ATOM = None
+FEED_ALL_RSS = None
+SOCIAL = None
 CATEGORY_FEED_ATOM = None
 TRANSLATION_FEED_ATOM = None
 AUTHOR_FEED_ATOM = None
