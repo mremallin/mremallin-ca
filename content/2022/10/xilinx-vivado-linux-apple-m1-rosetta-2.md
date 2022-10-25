@@ -11,7 +11,7 @@ Gallery:
 
 # Summary
 - Expect some bugs to appear
-- Stupid fast for what it is (within 15% of a 3800x for building [pcileech-fpga/ScreamerM2](https://github.com/ufrisk/pcileech-fpga))
+- Stupid fast for what it is (within 20% - 30% of a 3800x for building [pcileech-fpga/ScreamerM2](https://github.com/ufrisk/pcileech-fpga))
 - Can't easily migrate an existing VM to add Rosetta 2 support (yet)
 
 
